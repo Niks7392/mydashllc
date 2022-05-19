@@ -8,7 +8,7 @@ export const Login = () => {
 
     const loginUser = async (event) => {
         event.preventDefault();
-        const response = await fetch('http://localhost:3001/api/login', {
+        const response = await fetch('https://mydashllc.herokuapp.com/api/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'apllication/json'

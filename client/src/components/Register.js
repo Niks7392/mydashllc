@@ -13,7 +13,7 @@ export const Register = (props) => {
 
     const registerUser = async (event) => {
         event.preventDefault();
-        const response = await fetch('http://localhost:3001/api/register', {
+        const response = await fetch('https://mydashllc.herokuapp.com/api/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

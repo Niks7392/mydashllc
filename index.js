@@ -4,6 +4,7 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const user = require('./models/user.model')
 const jwt = require('jsonwebtoken')
+const PORT = process.env.PORT || 3001
 
 mongoose.connect('mongodb+srv://niks7392:niks7392@cluster0.we50x.mongodb.net/Assignments?retryWrites=true&w=majority', {
     useNewUrlParser: true
@@ -63,6 +64,13 @@ app.post('/api/login', async (req, res) => {
 
 // })
 
-app.listen(3001, () => {
+if(process.env.NODE_ENV == 'production'){
+    app.use(express.static("../client/build"))
+}
+
+
+
+
+app.listen(PORT, () => {
     console.log('server running')
 })
