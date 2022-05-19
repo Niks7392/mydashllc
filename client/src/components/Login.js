@@ -5,6 +5,8 @@ export const Login = () => {
     // test registered acc admin@admin.com:admin 
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
+    const navigate = useNavigate();
+
 
     const loginUser = async (event) => {
         event.preventDefault();
@@ -22,7 +24,7 @@ export const Login = () => {
         if(data.User){
             localStorage.setItem('token', data.User)
             alert('login success')
-            window.location.href = '/barchart'
+            navigate('/barchart')
         }else{
             alert('please check your email and password')
         }
